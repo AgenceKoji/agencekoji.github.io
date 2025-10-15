@@ -69,7 +69,7 @@
       </div>
     </div>
     <div class="pt-10 pb-10">
-      <h2 class="text-xl pb-8">Autres produits de {{ producer.name }}</h2>
+      <h2 class="text-xl pb-8 px-6">Autres produits de {{ producer.name }}</h2>
 
       <ProductGrid :products="otherProducts" />
     </div>

@@ -36,7 +36,7 @@ export default {
 
 <template>
   <div class="pt-12 mx-auto max-w-[1280px]">
-    <div class="flex flex-row-reverse gap-20 w-full">
+    <div class="flex flex-col lg:flex-row-reverse gap-20 w-full px-6">
       <div class="flex flex-col gap-4 grow">
         <h1 class="text-3xl pb-4">
           {{ producerData['name'] }}
@@ -49,11 +49,11 @@ export default {
           <p v-for="descPar in producerData['desc']">{{ descPar }}</p>
         </div>
       </div>
-      <img class="w-[30%] max-w-[320px]" :src="producerData['img']" />
+      <img class="lg:w-[30%] lg:max-w-[320px]" :src="producerData['img']" />
     </div>
 
     <div class="pt-10">
-      <h2 class="text-xl pb-8">Produits</h2>
+      <h2 class="px-6 text-xl pb-8">Produits</h2>
 
       <ProductGrid :products="products" />
     </div>

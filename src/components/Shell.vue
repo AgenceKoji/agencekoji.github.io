@@ -51,9 +51,7 @@
                     >
                       <button
                         :class="[
-                          selected
-                            ? 'border-indigo-600 text-indigo-600'
-                            : 'border-transparent text-gray-900',
+                          selected ? 'border-brand text-brand' : 'border-transparent text-gray-900',
                           'flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium',
                         ]"
                       >
