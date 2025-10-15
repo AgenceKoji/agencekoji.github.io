@@ -34,7 +34,7 @@ export default {
       <img class="object-contain w-full lg:h-full" src="/sake_cups.jpg" />
       <p class="px-6 text-center lg:text-end">
         Nous travaillons avec des petits brasseurs indépendents pour vous présenter des produits
-        artisanaux et de petites production, tout en couvrant la vaste diversité de styles qu'offre
+        artisanaux et de petite production, tout en couvrant la vaste diversité de styles qu'offre
         le saké.
       </p>
     </div>

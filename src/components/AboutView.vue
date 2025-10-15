@@ -10,7 +10,7 @@ export default {
         {
           question: 'Est-ce possible de commander des bouteilles individuelles?',
           answer:
-            "Malheureusement, la loi ne permet que la vente des produits en Importation Privées à la caisse. Vous pouvez déguster à la bouteille chez un de nos partenaires restaurateurs, ou bien vous procurer des produits d'Importation Privée à la bouteille lorsqu'ils sont disponibles sur la boutique IP en ligne de la SAQ",
+            "Malheureusement, la loi ne permet que la vente des produits en Importation Privées à la caisse. Vous pouvez déguster à la bouteille chez un de nos partenaires restaurateurs, ou bien vous procurer des produits d'Importation Privée à la bouteille lorsqu'ils sont disponibles sur la boutique IP en ligne de la SAQ.",
         },
         {
           question: 'Est-ce que vous offrez des formations pour le personnel de service?',
