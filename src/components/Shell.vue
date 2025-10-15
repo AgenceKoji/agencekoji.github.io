@@ -91,9 +91,9 @@
 
               <div class="space-y-6 border-t border-gray-200 px-4 py-6">
                 <div v-for="page in navigation.pages" :key="page.name" class="flow-root">
-                  <a :href="page.href" class="-m-2 block p-2 font-medium text-gray-900">{{
+                  <RouterLink :to="page.href" class="-m-2 block p-2 font-medium text-gray-900">{{
                     page.name
-                  }}</a>
+                  }}</RouterLink>
                 </div>
               </div>
             </DialogPanel>
@@ -175,13 +175,13 @@
                                         class="w-full h-auto rounded-md bg-gray-100 object-cover group-hover:opacity-75"
                                       />
                                     </div>
-                                    <a
-                                      :href="item.href"
+                                    <RouterLink
+                                      :to="item.href"
                                       class="mt-4 block font-medium text-gray-900"
                                     >
                                       <span class="absolute inset-0 z-10" aria-hidden="true" />
                                       {{ item.name }}
-                                    </a>
+                                    </RouterLink>
                                   </div>
                                 </div>
                               </div>
@@ -189,12 +189,12 @@
                           </PopoverPanel>
                         </transition>
                       </Popover>
-                      <a
+                      <RouterLink
                         v-for="page in navigation.pages"
                         :key="page.name"
-                        :href="page.href"
+                        :to="page.href"
                         class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                        >{{ page.name }}</a
+                        >{{ page.name }}</RouterLink
                       >
                     </div>
                   </PopoverGroup>
