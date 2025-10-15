@@ -130,14 +130,14 @@
                         <div class="relative flex">
                           <PopoverButton
                             :class="[
-                              open ? 'text-indigo-600' : 'text-gray-700 hover:text-gray-800',
+                              open ? 'text-brand' : 'text-gray-700 hover:text-gray-800',
                               'relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-out',
                             ]"
                           >
                             {{ category.name }}
                             <span
                               :class="[
-                                open ? 'bg-indigo-600' : '',
+                                open ? 'bg-brand' : '',
                                 'absolute inset-x-0 -bottom-px z-30 h-0.5 transition duration-200 ease-out',
                               ]"
                               aria-hidden="true"
@@ -153,6 +153,7 @@
                           leave-to-class="opacity-0"
                         >
                           <PopoverPanel
+                            v-slot="{ close }"
                             class="absolute inset-x-0 top-full z-20 w-full bg-white text-sm text-gray-500"
                           >
                             <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
@@ -167,6 +168,7 @@
                                     v-for="item in category.featured"
                                     :key="item.name"
                                     class="group relative flex flex-col items-center"
+                                    @click="close()"
                                   >
                                     <div class="w-[280px] h-[280px] flex items-center">
                                       <img
@@ -241,8 +243,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
+<script lang="ts">
 import {
   Dialog,
   DialogPanel,
@@ -258,64 +259,71 @@ import {
   TransitionChild,
   TransitionRoot,
 } from '@headlessui/vue'
-import {
-  Bars3Icon,
-  MagnifyingGlassIcon,
-  QuestionMarkCircleIcon,
-  ShoppingBagIcon,
-  XMarkIcon,
-} from '@heroicons/vue/24/outline'
-import { ChevronDownIcon } from '@heroicons/vue/20/solid'
+import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import Footer from './Footer.vue'
 
-const navigation = {
-  categories: [
-    {
-      name: 'Producteurs',
-      featured: [
-        {
-          name: 'Taiun Sake Brewing',
-          href: '/producers/taiun-sake-brewing',
-          imageSrc: '/taiun.webp',
-          imageAlt: 'Taiun Sake Brewing LLC logo on a rice field backdrop.',
-        },
-        {
-          name: 'Obama Sake Co',
-          href: '/producers/obama-sake-company',
-          imageSrc: '/obama.avif',
-          imageAlt: 'Obama Sake Company logo.',
-        },
-        {
-          name: 'Lagoon Brewery',
-          href: '/producers/lagoon-brewery',
-          imageSrc: '/lagoon.jpg',
-          imageAlt: 'Lagoon Brewery logo.',
-        },
-        {
-          name: 'Omurasaki Beverage Company',
-          href: '/producers/omurasaki-beverage-company',
-          imageSrc: '/uka.png',
-          imageAlt: 'Uka logo.',
-        },
-      ],
+export default {
+  components: {
+    Dialog,
+    DialogPanel,
+    Popover,
+    PopoverButton,
+    PopoverGroup,
+    PopoverPanel,
+    Tab,
+    TabGroup,
+    TabList,
+    TabPanel,
+    TabPanels,
+    TransitionChild,
+    TransitionRoot,
+    Bars3Icon,
+    XMarkIcon,
+    Footer,
+  },
+  data() {
+    return {
+      navigation: (navigation = {
+        categories: [
+          {
+            name: 'Producteurs',
+            featured: [
+              {
+                name: 'Taiun Sake Brewing',
+                href: '/producers/taiun-sake-brewing',
+                imageSrc: '/taiun.webp',
+                imageAlt: 'Taiun Sake Brewing LLC logo on a rice field backdrop.',
+              },
+              {
+                name: 'Obama Sake Co',
+                href: '/producers/obama-sake-company',
+                imageSrc: '/obama.avif',
+                imageAlt: 'Obama Sake Company logo.',
+              },
+              {
+                name: 'Lagoon Brewery',
+                href: '/producers/lagoon-brewery',
+                imageSrc: '/lagoon.jpg',
+                imageAlt: 'Lagoon Brewery logo.',
+              },
+              {
+                name: 'Omurasaki Beverage Company',
+                href: '/producers/omurasaki-beverage-company',
+                imageSrc: '/uka.png',
+                imageAlt: 'Uka logo.',
+              },
+            ],
+          },
+        ],
+        pages: [{ name: 'À propos', href: '/about' }],
+      }),
+      open: false,
+    }
+  },
+  watch: {
+    $route(to, from) {
+      this.open = false
     },
-    /*
-    {
-      name: 'Produits',
-      featured: [
-        {
-          name: 'New Arrivals',
-          href: '#',
-          imageSrc:
-            'https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-01-men-category-01.jpg',
-          imageAlt:
-            'Hats and sweaters on wood shelves next to various colors of t-shirts on hangers.',
-        },
-      ],
-    },*/
-  ],
-  pages: [{ name: 'À propos', href: '/about' }],
+  },
 }
-
-const open = ref(false)
 </script>

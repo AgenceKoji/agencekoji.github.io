@@ -12,6 +12,10 @@ const router = createRouter({
     { path: '/', component: LandingView },
     { path: '/about', component: AboutView },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return { top: 0 }
+  },
 })
 
 export default router
