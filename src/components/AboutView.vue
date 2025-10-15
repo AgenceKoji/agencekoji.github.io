@@ -28,13 +28,13 @@ export default {
 }
 </script>
 <template>
-  <div class="content flex flex-col items-center mx-auto max-w-[1280px] text-lg gap-12">
+  <div class="content flex flex-col items-center mx-auto max-w-[1280px] text-lg gap-12 px-6">
     <h2
       class="text-center text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl dark:text-white pb-12 pt-12"
     >
       À propos d'Agence Koji
     </h2>
-    <p class="mx-auto max-w-[960px]">
+    <p class="">
       Démarrée en 2023, Agence Koji est née d'un désir de déguster une plus grande variété de saké
       d'artisant, et de partager cette découverte avec nos amis, familles, et le reste du Québec.
     </p>
@@ -45,7 +45,7 @@ export default {
       tradition du saké.
     </p>
     <div class="bg-white dark:bg-gray-900 max-w-[960px]">
-      <div class="mx-auto w-full px-6 sm:pt-32 lg:px-8">
+      <div class="mx-auto w-full sm:pt-32">
         <div class="lg:grid lg:grid-cols-12 lg:gap-8">
           <div class="lg:col-span-5">
             <h2
