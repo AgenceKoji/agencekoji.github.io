@@ -30,7 +30,7 @@ export default {
 <template>
   <div class="content flex flex-col items-center mx-auto max-w-[1280px] text-lg gap-12 px-6">
     <h2
-      class="text-center text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl dark:text-white pb-12 pt-12"
+      class="text-center text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl pb-12 pt-12"
     >
       À propos d'Agence Koji
     </h2>
@@ -44,16 +44,14 @@ export default {
       entreprises familiales. De cette façon, nous avons la chance de contribuer au maintient de la
       tradition du saké.
     </p>
-    <div class="bg-white dark:bg-gray-900 max-w-[960px]">
+    <div class="bg-white max-w-[960px]">
       <div class="mx-auto w-full sm:pt-32">
         <div class="lg:grid lg:grid-cols-12 lg:gap-8">
           <div class="lg:col-span-5">
-            <h2
-              class="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl dark:text-white"
-            >
+            <h2 class="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
               Questions Fréquentes
             </h2>
-            <p class="mt-4 text-base/7 text-pretty text-gray-600 dark:text-gray-400">
+            <p class="mt-4 text-base/7 text-pretty text-gray-600">
               D'autres questions?
               <a
                 href="mailto:info@agencekoji.com"
@@ -65,10 +63,10 @@ export default {
           <div class="mt-10 lg:col-span-7 lg:mt-0">
             <dl class="space-y-10">
               <div v-for="faq in faqs" :key="faq.question">
-                <dt class="text-base/7 font-semibold text-gray-900 dark:text-white">
+                <dt class="text-base/7 font-semibold text-gray-900">
                   {{ faq.question }}
                 </dt>
-                <dd class="mt-2 text-base/7 text-gray-600 dark:text-gray-400">{{ faq.answer }}</dd>
+                <dd class="mt-2 text-base/7 text-gray-600">{{ faq.answer }}</dd>
               </div>
             </dl>
           </div>

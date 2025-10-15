@@ -1,11 +1,9 @@
 <template>
-  <div
-    class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-gray-900"
-  >
+  <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
     <img
       src="/barrels.jpg"
       alt=""
-      class="absolute inset-0 -z-10 size-full object-cover opacity-30 dark:hidden"
+      class="absolute inset-0 -z-10 size-full object-cover opacity-30"
     />
 
     <div

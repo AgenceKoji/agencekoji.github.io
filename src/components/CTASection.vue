@@ -1,13 +1,11 @@
 <template>
-  <div class="bg-white dark:bg-gray-900">
+  <div class="bg-white">
     <div class="px-6 py-24 sm:py-32 lg:px-8">
       <div class="mx-auto text-center">
-        <h2
-          class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl dark:text-white"
-        >
+        <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
           Vous voulez commander?
         </h2>
-        <p class="mx-auto mt-6 text-lg/8 text-pretty text-gray-600 dark:text-gray-300">
+        <p class="mx-auto mt-6 text-lg/8 text-pretty text-gray-600">
           Nos sakés sont disponibles à la caisse, pour les particuliers ou les restaurateurs.
           Contactez-nous pour commander, planifier une dégustation, ou pour plus d'information.
         </p>

@@ -14,7 +14,7 @@ export default {
   <LandingHeader />
   <div class="flex flex-col mx-auto max-w-[1080px] pt-12 text-xl gap-12">
     <h2
-      class="text-center text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl dark:text-white lg:pb-12 px-6"
+      class="text-center text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl lg:pb-12 px-6"
     >
       Découvrez des sakés exceptionnels
     </h2>
