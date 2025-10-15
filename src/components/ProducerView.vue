@@ -1,5 +1,5 @@
 <script lang="ts">
-import { producers } from '../data/products.js'
+import { producers } from '../data/products.ts'
 import ProductGrid from './ProductGrid.vue'
 import { LinkIcon } from '@heroicons/vue/24/outline'
 
