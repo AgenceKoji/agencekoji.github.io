@@ -102,7 +102,7 @@ export const producers = [
     products: [
       {
         name: 'Hop Sake',
-        img: '',
+        img: '/hop.jpeg',
         availability: 'ordered',
         desc: [
           "Saké infusé de houblons pour un breuvage rosé et rafraîchissant. Son acidité et légère amertume en font un accord parfait avec grillades, fritures, et plats relevés d'Asie du sud-est.",
@@ -112,7 +112,7 @@ export const producers = [
       },
       {
         name: 'Koshiranrei Junmai Daiginjo',
-        img: '',
+        img: '/koshitanrei.jpeg',
         availability: 'ordered',
         desc: [
           "Brassé avec du riz Koshitanrei poli à 39%, c'est un Junmai Daiginjo léger, élégant, et légèrement doux qui s'accorde à merveille avec des bouchées fraîches.",
@@ -121,7 +121,7 @@ export const producers = [
       },
       {
         name: 'Naturally Grown Kamenoo',
-        img: '',
+        img: '/kamenoo.jpeg',
         availability: 'ordered',
         desc: [
           "Brassé avec du riz Kamenoo poli à 70%, c'est un saké rafraîchissant et riche en saveur qui est aussi délicieux seul qu'en accord avec du carpaccio de poisson blanc ou du porc grillé.",
