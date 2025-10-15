@@ -34,7 +34,7 @@ jobs:
       # Deploys the built project to the gh\-pages branch
       - name: Deploy to GitHub Pages
         run: |
-          cd website/dist
+          cd dist
           git config --global user.email "${{ secrets.EMAIL }}"
           git config --global user.name "${{ github.actor }}"
           git init
