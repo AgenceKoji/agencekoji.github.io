@@ -19,7 +19,7 @@
   </footer>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { defineComponent, h } from 'vue'
 
 const navigation = [

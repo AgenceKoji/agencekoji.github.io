@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import { producers } from '../data/products.js'
 import ProductGrid from './ProductGrid.vue'
 import { LinkIcon } from '@heroicons/vue/24/outline'
@@ -11,13 +11,16 @@ export default {
   computed: {
     producerData() {
       const producer = producers.filter(
+        // @ts-ignore
         (p) => p.name.toLowerCase().replaceAll(' ', '-') === this.$route.params.producerslug,
       )
-      return producer[0]
+      return producer[0]!
     },
     products() {
       return this.producerData['products'].map((p) => {
+        // @ts-ignore
         const producerId = this.producerData['name'].toLowerCase().replaceAll(' ', '-')
+        // @ts-ignore
         const id = p.name.toLowerCase().replaceAll(' ', '-')
         return {
           name: p.name,

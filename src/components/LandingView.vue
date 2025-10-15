@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import CTASection from './CTASection.vue'
 import LandingHeader from './LandingHeader.vue'
 

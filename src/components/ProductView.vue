@@ -16,9 +16,11 @@
         <section aria-labelledby="information-heading" class="mt-4">
           <h2 id="information-heading" class="sr-only">Product information</h2>
 
+          <!--
           <div class="flex items-center">
             <p class="text-lg text-gray-900 sm:text-xl">{{ product.price }}</p>
           </div>
+          -->
 
           <div class="mt-4 space-y-6">
             <p v-for="line in product.desc" class="text-base text-gray-500">{{ line }}</p>
@@ -74,7 +76,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { CheckIcon } from '@heroicons/vue/20/solid'
 import { ClockIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { producers } from '../data/products.js'
@@ -93,17 +95,22 @@ export default {
   computed: {
     producer() {
       return producers.filter(
+        // @ts-ignore
         (p) => p.name.toLowerCase().replaceAll(' ', '-') === this.$route.params.producerslug,
-      )[0]
+      )[0]!
     },
     otherProducts() {
+      // @ts-ignore
       return this.producer['products']
         .filter((p) => {
+          // @ts-ignore
           const id = p.name.toLowerCase().replaceAll(' ', '-')
           return this.$route.params.productslug !== id
         })
         .map((p) => {
+          // @ts-ignore
           const producerId = this.producer['name'].toLowerCase().replaceAll(' ', '-')
+          // @ts-ignore
           const id = p.name.toLowerCase().replaceAll(' ', '-')
           return {
             name: p.name,
@@ -115,13 +122,16 @@ export default {
     },
     product() {
       const producer = producers.filter(
+        // @ts-ignore
         (p) => p.name.toLowerCase().replaceAll(' ', '-') === this.$route.params.producerslug,
-      )[0]
+      )[0]!
 
+      // @ts-ignore
       return producer['products'].filter((p) => {
+        // @ts-ignore
         const id = p.name.toLowerCase().replaceAll(' ', '-')
         return this.$route.params.productslug === id
-      })[0]
+      })[0]!
     },
   },
 }
