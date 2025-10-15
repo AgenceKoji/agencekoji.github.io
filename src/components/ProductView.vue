@@ -77,7 +77,7 @@
 </template>
 
 <script lang="ts">
-import { CheckIcon } from '@heroicons/vue/20/solid'
+import { CheckIcon } from '@heroicons/vue/24/solid'
 import { ClockIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { producers } from '../data/products.ts'
 import ProductGrid from './ProductGrid.vue'
