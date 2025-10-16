@@ -77,7 +77,7 @@
                           class="aspect-square w-full rounded-md bg-gray-100 object-cover group-hover:opacity-75"
                         />
                         <RouterLink
-                          :href="item.href"
+                          :to="item.href"
                           class="mt-6 block text-sm font-medium text-gray-900"
                         >
                           <span class="absolute inset-0 z-10" aria-hidden="true" />
