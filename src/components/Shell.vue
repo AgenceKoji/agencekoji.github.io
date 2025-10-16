@@ -283,7 +283,7 @@ export default {
   },
   data() {
     return {
-      navigation: (navigation = {
+      navigation: {
         categories: [
           {
             name: 'Producteurs',
@@ -316,7 +316,7 @@ export default {
           },
         ],
         pages: [{ name: 'À propos', href: '/about' }],
-      }),
+      },
       open: false,
     }
   },
