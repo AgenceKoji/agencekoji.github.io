@@ -16,14 +16,45 @@
         <section aria-labelledby="information-heading" class="mt-4">
           <h2 id="information-heading" class="sr-only">Product information</h2>
 
-          <!--
-          <div class="flex items-center">
-            <p class="text-lg text-gray-900 sm:text-xl">{{ product.price }}</p>
+          <div v-if="hasPriceInfo" class="flex flex-col gap-1 items-start">
+            <div class="flex gap-2 items-center text-lg text-gray-900 sm:text-xl">
+              <span>{{ regularTotalPrice }}$/bouteille</span>
+              <span> - </span>
+              <span> {{ regularTotalPrice * bottlesPerCase }}$/caisse </span>
+              <Tooltip>
+                <div class="flex flex-col gap-2">
+                  <span
+                    >Frais d'agent: {{ regularAgentFee }}$ + taxes payable au moment de la
+                    commande</span
+                  >
+                  <span>Prix SAQ: {{ regularPrice }} payable en succursale lors du ramassage</span>
+                </div>
+              </Tooltip>
+            </div>
+
+            <div class="flex gap-2 text-sm text-gray-900">
+              <span>Restauration: </span>
+              <span>{{ licenseeTotalPrice }}$/bouteille</span>
+              <span>-</span>
+              <span> {{ licenseeTotalPrice * bottlesPerCase }}$/caisse </span>
+              <Tooltip>
+                <div class="flex flex-col gap-2">
+                  <span
+                    >Frais d'agent: {{ licenseeAgentFee }}$ + taxes payable au moment de la
+                    commande</span
+                  >
+                  <span>Prix SAQ: {{ licenseePrice }} payable en succursale lors du ramassage</span>
+                </div>
+              </Tooltip>
+            </div>
           </div>
-          -->
 
           <div class="mt-4 space-y-6">
             <p v-for="line in product.desc" class="text-base text-gray-500">{{ line }}</p>
+          </div>
+
+          <div v-if="hasPriceInfo" class="mt-4 text-base text-gray-500">
+            Vendu en caisses de {{ bottlesPerCase }} bouteilles de {{ bottleVolume }}ml.
           </div>
         </section>
       </div>
@@ -41,19 +72,26 @@
               <!-- Size selector -->
             </div>
             <div class="mt-4"></div>
-            <div v-if="product.availability === 'ordered'" class="mt-6 flex items-center">
-              <ClockIcon class="size-5 shrink-0 text-gray-500" aria-hidden="true" />
-              <p class="ml-2 text-sm text-gray-500">Disponible bientôt</p>
-            </div>
-            <div v-if="product.availability === 'in_stock'" class="mt-4 flex items-center">
-              <CheckIcon class="size-5 shrink-0 text-green-500" aria-hidden="true" />
-              <p class="ml-2 text-sm text-gray-500">Disponible</p>
-            </div>
 
-            <div v-if="product.availability === 'out_of_stock'" class="mt-4 flex items-center">
+            <div v-if="hasPriceInfo">
+              <div v-if="hasInventory" class="mt-4 flex items-center">
+                <CheckIcon class="size-5 shrink-0 text-green-500" aria-hidden="true" />
+                <p class="ml-2 text-sm text-gray-500">Disponible</p>
+              </div>
+              <div v-else-if="hasOrdered" class="mt-6 flex items-center">
+                <ClockIcon class="size-5 shrink-0 text-gray-500" aria-hidden="true" />
+                <p class="ml-2 text-sm text-gray-500">Disponible bientôt</p>
+              </div>
+              <div v-else class="mt-4 flex items-center">
+                <XMarkIcon class="size-5 shrink-0 text-gray-500" aria-hidden="true" />
+                <p class="ml-2 text-sm text-gray-500">Temporairement en rupture de stock</p>
+              </div>
+            </div>
+            <div v-else class="mt-4 flex items-center">
               <XMarkIcon class="size-5 shrink-0 text-gray-500" aria-hidden="true" />
               <p class="ml-2 text-sm text-gray-500">Temporairement en rupture de stock</p>
             </div>
+
             <div class="mt-6">
               <a
                 type="button"
@@ -78,9 +116,12 @@
 
 <script lang="ts">
 import { CheckIcon } from '@heroicons/vue/24/solid'
-import { ClockIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { ClockIcon, XMarkIcon, InformationCircleIcon } from '@heroicons/vue/24/outline'
 import { producers } from '../data/products.ts'
 import ProductGrid from './ProductGrid.vue'
+import Tooltip from './Tooltip.vue'
+
+import { useProducts } from '@/queries/products.js'
 
 export default {
   components: {
@@ -88,9 +129,13 @@ export default {
     ClockIcon,
     ProductGrid,
     XMarkIcon,
+    InformationCircleIcon,
+    Tooltip,
   },
   data() {
-    return {}
+    return {
+      products: useProducts(),
+    }
   },
   computed: {
     producer() {
@@ -132,6 +177,74 @@ export default {
         const id = p.name.toLowerCase().replaceAll(' ', '-')
         return this.$route.params.productslug === id
       })[0]!
+    },
+    hasInventory() {
+      const info = this.products.state.data.data.filter((p) => {
+        return p.saq_article_number === this.product.articleNumber
+      })[0]
+      return info.inventory_cases > 0
+    },
+    hasOrdered() {
+      const info = this.products.state.data.data.filter((p) => {
+        return p.saq_article_number === this.product.articleNumber
+      })[0]
+      return info.ordered_cases > 0
+    },
+    bottlesPerCase() {
+      const info = this.products.state.data.data.filter((p) => {
+        return p.saq_article_number === this.product.articleNumber
+      })[0]
+      return info.bottles_per_case
+    },
+    bottleVolume() {
+      const info = this.products.state.data.data.filter((p) => {
+        return p.saq_article_number === this.product.articleNumber
+      })[0]
+      return info.bottle_volume
+    },
+    hasPriceInfo() {
+      return (
+        this.products.state.status === 'success' &&
+        this.products.state.data.data.filter((p) => {
+          return p.saq_article_number === this.product.articleNumber
+        }).length > 0
+      )
+    },
+    regularPrice() {
+      const info = this.products.state.data.data.filter((p) => {
+        return p.saq_article_number === this.product.articleNumber
+      })[0]
+      return ((info.regular_price * info.bottles_per_case) / 100).toFixed(2)
+    },
+    regularAgentFee() {
+      const info = this.products.state.data.data.filter((p) => {
+        return p.saq_article_number === this.product.articleNumber
+      })[0]
+      return ((info.regular_agent_fee * info.bottles_per_case) / 100).toFixed(2)
+    },
+    regularTotalPrice() {
+      const info = this.products.state.data.data.filter((p) => {
+        return p.saq_article_number === this.product.articleNumber
+      })[0]
+      return ((info.regular_price + info.regular_agent_fee) / 100).toFixed(2)
+    },
+    licenseePrice() {
+      const info = this.products.state.data.data.filter((p) => {
+        return p.saq_article_number === this.product.articleNumber
+      })[0]
+      return ((info.licensee_price * info.bottles_per_case) / 100).toFixed(2)
+    },
+    licenseeAgentFee() {
+      const info = this.products.state.data.data.filter((p) => {
+        return p.saq_article_number === this.product.articleNumber
+      })[0]
+      return ((info.licensee_agent_fee * info.bottles_per_case) / 100).toFixed(2)
+    },
+    licenseeTotalPrice() {
+      const info = this.products.state.data.data.filter((p) => {
+        return p.saq_article_number === this.product.articleNumber
+      })[0]
+      return ((info.licensee_price + info.licensee_agent_fee) / 100).toFixed(2)
     },
   },
 }

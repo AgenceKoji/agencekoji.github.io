@@ -11,6 +11,7 @@ export const producers = [
     products: [
       {
         name: 'Taiun Tokubetsu Junmai',
+        articleNumber: '15553505',
         img: '/taiun_tokubetsu_junmai.avif',
         desc: [
           'Un Tokubetsu Junmai brassé avec du riz de table poli à 65%, et du Yamada Nishiki poli à 50% pour le koji. Un saké plutôt sec avec une bonne buvabilité.',
@@ -20,6 +21,7 @@ export const producers = [
       },
       {
         name: 'Taiun Kimoto Junmai Ginjo',
+        articleNumber: '15553290',
         img: '/taiun_kimoto_junmai_ginjo.avif',
         availability: 'ordered',
         desc: [
@@ -28,6 +30,7 @@ export const producers = [
       },
       {
         name: 'Taiun Junmai Daiginjo',
+        articleNumber: '15553484',
         img: '/taiun_junmai_daiginjo.avif',
         availability: 'ordered',
         desc: [
@@ -36,6 +39,7 @@ export const producers = [
       },
       {
         name: 'Taichu 65 2025',
+        articleNumber: '15553572',
         img: '/taichu_65.avif',
         availability: 'ordered',
         desc: [
@@ -44,6 +48,7 @@ export const producers = [
       },
       {
         name: 'Taichu 65 Saijo',
+        articleNumber: '15553581',
         img: '/taichu_65_saijo.avif',
         availability: 'ordered',
         desc: [
@@ -64,6 +69,7 @@ export const producers = [
     products: [
       {
         name: 'Wakasa Junmai',
+        articleNumber: '15559499',
         img: '/wakasa_junmai.webp',
         availability: 'ordered',
         desc: [
@@ -73,6 +79,7 @@ export const producers = [
       },
       {
         name: 'Wakasa Junmai Ginjo',
+        articleNumber: '15559747',
         img: '/wakasa_junmai_ginjo.webp',
         availability: 'ordered',
         desc: [
@@ -82,6 +89,7 @@ export const producers = [
       },
       {
         name: 'Wakasa Junmai Daiginjo',
+        articleNumber: '15559510',
         img: '/wakasa_junmai_daiginjo.webp',
         availability: 'ordered',
         desc: [
@@ -102,6 +110,7 @@ export const producers = [
     products: [
       {
         name: 'Hop Sake',
+        articleNumber: '15573768',
         img: '/hop.jpeg',
         availability: 'ordered',
         desc: [
@@ -112,6 +121,7 @@ export const producers = [
       },
       {
         name: 'Koshiranrei Junmai Daiginjo',
+        articleNumber: '15573434',
         img: '/koshitanrei.jpeg',
         availability: 'ordered',
         desc: [
@@ -121,6 +131,7 @@ export const producers = [
       },
       {
         name: 'Naturally Grown Kamenoo',
+        articleNumber: '15573645',
         img: '/kamenoo.jpeg',
         availability: 'ordered',
         desc: [

@@ -131,7 +131,7 @@
                           <PopoverButton
                             :class="[
                               open ? 'text-brand' : 'text-gray-700 hover:text-gray-800',
-                              'relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-out',
+                              'relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-out hover:cursor-pointer',
                             ]"
                           >
                             {{ category.name }}
