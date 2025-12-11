@@ -88,7 +88,11 @@
                   </TabPanel>
                 </TabPanels>
               </TabGroup>
-
+              <div class="space-y-6 border-t border-gray-200 px-4 py-6">
+                <a class="-m-2 block p-2 font-medium text-gray-900" href="/portfolio.pdf" download
+                  >Portfolio</a
+                >
+              </div>
               <div class="space-y-6 border-t border-gray-200 px-4 py-6">
                 <div v-for="page in navigation.pages" :key="page.name" class="flow-root">
                   <RouterLink :to="page.href" class="-m-2 block p-2 font-medium text-gray-900">{{
