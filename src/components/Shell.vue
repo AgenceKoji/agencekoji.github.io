@@ -191,6 +191,15 @@
                           </PopoverPanel>
                         </transition>
                       </Popover>
+                      <a
+                        :class="[
+                          'text-gray-700 hover:text-gray-800',
+                          'relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-out hover:cursor-pointer',
+                        ]"
+                        href="/portfolio.pdf"
+                        download
+                        >Portfolio</a
+                      >
                       <RouterLink
                         v-for="page in navigation.pages"
                         :key="page.name"
