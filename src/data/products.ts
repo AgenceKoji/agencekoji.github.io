@@ -3,9 +3,10 @@ export const producers = [
     name: 'Taiun Sake Brewing',
     url: 'https://taiunsake.co.jp/',
     img: '/taiun_profile.avif',
+    region: 'Shimane',
     desc: [
       "Fondée en 2021 à Izumo, Shimane, Taiun Sake est la culmination de plus de 10 ans d'expérience de brassage par son créateur, Mr Chen. Originaire de Taiwan, il vise à maintenir une connection entre le Japon et Taiwan à travers le saké.",
-      "À cet effet, la brasserie utilise une variété de riz développée pour les conditions environnementales de Taiwan durant l'occupation Japonaise dans l'élaboration de son saké phare: Taichu 65.",
+      "À cet effet, la brasserie utilise une variété de riz développée au Japon pour les conditions environnementales de Taiwan dans l'élaboration de son saké phare: Taichu 65.",
       "Gagnant de plusieurs prix, tant au Japon qu'à l'international, les sakés de Taiun Sake sont de haute qualité et offrent une grande variété de profils aromatiques.",
     ],
     products: [
@@ -22,38 +23,49 @@ export const producers = [
       {
         name: 'Taiun Kimoto Junmai Ginjo',
         articleNumber: '15553290',
-        img: '/taiun_kimoto_junmai_ginjo.avif',
+        img: '/taiun_kimoto_junmai_ginjo.png',
         availability: 'ordered',
         desc: [
-          "Brassé selon la méthode Kimoto avec du Yamada Nishiki poli à 55%. Un saké léger et d'une subtile complexité.",
+          'Un Junmai Ginjo brassé selon la méthode Kimoto, avec du riz Yamada Nishiki poli à 55%.',
+          "Le nez délicat met de l'avant des arômes lactiques subtils de crème sûre et yogourt, typique de la méthode Kimoto. On y retrouve aussi le melon de miel, le cantaloup, et la banane mûre.",
+          'Le palais est dominé par le melon, auquel se joint une franche acidité pour créer un résultat rafraîchissant et facile à boire.',
+          "À déguster frais ou à température ambiante. On l'accorde avec fromages de tous genres, guacamole, tacos de poisson, huître, et prosciutto.",
         ],
       },
       {
         name: 'Taiun Junmai Daiginjo',
         articleNumber: '15553484',
-        img: '/taiun_junmai_daiginjo.avif',
+        img: '/taiun_junmai_daiginjo.png',
         availability: 'ordered',
         desc: [
-          "Brassé à partir de Yamada Nishiki poli à 50%, c'est un Junmai Daiginjo élégant et floral.",
+          'Un Junmai Daiginjo élégant, brassé à partir de Yamada Nishiki poli à 50%.',
+          'Le nez promet un saké riche et fruité, offrant des arômes de pêches, fruits tropicaux, et de bonbon au litchi.',
+          'Le palais généreux et mi-doux remplit la promesse. On y retrouve à nouveau les fruits tropicaux, bien intégrés à un corps léger et une subtile acidité qui rendent ce saké particulièrement rafraîchissant.',
+          'À boire frais, seul ou en accord avec poisson grillé, ceviche, charcuterie, ou burrata.',
         ],
       },
       {
         name: 'Taichu 65 2025',
         articleNumber: '15553572',
-        img: '/taichu_65.avif',
+        img: '/taichu_65.png',
         availability: 'ordered',
         desc: [
-          "Brassé à partir de Taichu 65, un riz Taiwanais cultivé au Japon, poli à 54%. Fermenté avec des levures arômatiques et en utilisant une méthode de l'époque Meiji pour démarrer la fermentation.",
+          "Un saké de production limitée, brassé à partir de Taichu 65, un riz historiquement cultivé à Taiwan et poli à 54%. La méthode de brassage varie chaque année; pour le millésime 2025, le saké est brassé avec des levures aromatiques et une méthode de démarrage de fermentation 'sans koji' datant de l’époque Meiji. L’utilisation de cette technique donne un saké pur et précis: difficile de croire qu’il est fait de riz de table aussi peu poli!",
+          'Le nez est subtil et tout en ginjo-ka. On y retrouve des arômes de bonbons à la pomme, de melon, de fraises, et de banane mûre.',
+          'Le palais est tout aussi élégant, mi-doux, avec une texture ronde et enveloppante.',
+          'À déguster frais, c’est un accord parfait pour des plats délicats comme le sashimi, une salade estivale, des nouilles soba fraîches, ou un gaspacho.',
         ],
       },
       {
         name: 'Taichu 65 Saijo',
         articleNumber: '15553581',
-        img: '/taichu_65_saijo.avif',
+        img: '/taichu_65_saijo.png',
         availability: 'ordered',
         desc: [
           "Production limitée de Kijoshu (saké noble) brassé à partir de riz Taichu 65. Une portion de la production de l'année précédente est ajoutée à la fermentation.",
-          "C'est un saké doux, un style souvent comparé aux vins liquoreux de Bordeaux.",
+          'On y retrouve un nez de melon, de yogourt, et de pelure d’orange.',
+          "Au palais, c'est un saké très doux, que l'on pourrait comparer aux vins liquoreux de Bordeaux.",
+          'Il accompagne parfaitement le plateau de fromages ou se déguste seul pour le dessert.',
         ],
       },
     ],
@@ -62,9 +74,10 @@ export const producers = [
     name: 'Obama Sake Company',
     url: 'https://obama-sake.com/en',
     img: '/obama_profile.webp',
+    region: 'Fukui',
     desc: [
-      'Établie en 2016 suite à la reprise de la Compagnie de Saké Wakasa Fuji, Obama Sake est une relativement jeune brasserie. Elle trace ses racines au milieu des années 1800, aux brasseries Yoshioka et Henmi qui ont été combinées pour former Wakasa Fuji.',
-      "Leur mission est de conserver la tradition du saké local. Ils utilisent strictement les meilleurs ingrédients locaux pour élaborer des sakés qui peuvent rendre fiers les résidents de la ville d'Obama, dans la préfecture de Fukui.",
+      "Obama Saké est une brasserie relativement jeune située à la ville d'Obama, dans la préfecture de Fukui. Elle a été établie en 2016 suite à la reprise des activités de la Compagnie de Saké Wakasa Fuji, une brasserie qui trace ses origines au milieu des années 1800.",
+      "Obama Saké s'est donné pour mission de conserver la tradition du saké local et utilise strictement les meilleurs ingrédients locaux pour l'élaboration de ses sakés.",
     ],
     products: [
       {
@@ -73,8 +86,9 @@ export const producers = [
         img: '/wakasa_junmai.webp',
         availability: 'ordered',
         desc: [
-          'Un assemblage de riz local poli à 65%. Le nez herbal complète un Junmai audacieux tout en umami et parfait en accompagnement de repas.',
-          "On y perçoit des arômes de bananes, basilic, et menthe. Le palais est riche, rempli d'umami, et texturé. Parfait accord avec des fromages, asperges, et poissons grillés.",
+          'Un Junmai audacieux, brassé avec un assemblage de riz local poli à 65%.',
+          'Ce saké tout en umami se caractérise par un nez herbal, avec des arômes de banane, basilic et menthe.',
+          'Avec son palais riche et texturé, ce saké est parfait en accompagnement de repas, notamment les poissons et légumes grillés, ainsi que les plateaux de fromages.',
         ],
       },
       {
@@ -83,8 +97,9 @@ export const producers = [
         img: '/wakasa_junmai_ginjo.webp',
         availability: 'ordered',
         desc: [
-          "Yamada Nishiki de qualité supérieure poli à 55%, levure FK801-C et eau de source sous-terraine contribuent à l'élégance de ce Junmai Ginjo fruité et dense.",
-          "C'est un saké légèrement doux avec une fraîche acidité et un nez délicat de cerises, baies, et bonbon à la pomme. Un superbe accord avec des huîtres, du saumon, des fromages, et du jambon.",
+          'Un junmai ginjo fruité, dense, et élégant brassé avec du riz Yamada Nishiki de qualité supérieure poli à 55%, la levure FK801-C et eau de source sous-terraine.',
+          "C'est un saké légèrement doux avec une fraîche acidité et un nez délicat de cerises, baies, et bonbon à la pomme.",
+          'Un superbe accord avec des huîtres, du saumon, des plateaux de fromages et de charcuteries.',
         ],
       },
       {
@@ -93,8 +108,9 @@ export const producers = [
         img: '/wakasa_junmai_daiginjo.webp',
         availability: 'ordered',
         desc: [
-          'Fait de riz Yamada Nishiki de qualité supérieure poli à 38%. Délicat, frais et élégant, ce Junmai Daiginjo reflète le plein potentiel de la levure FK801-C de Fukui avec sa texture soyeuse et son profil fruité et floral.',
-          "Ce saké léger et mi-doux à la texture soyeuse s'accorde à merveille avec des charcuteries, des champignons, et des pâtes carbonara. Au nez, on perçoit la pomme verte, le melon, le muscat, et le lys.",
+          "Un Junmai Daiginjo délicat, frais et élégant, fait à partir de Yamada Nishiki poli à 38% et d'une levure originaire de la région de Fukui (FK801-C).",
+          'Fruité et floral, on y retrouve des arômes de pomme verte, de muscat et de lys.',
+          "Ce saké léger à la texture soyeuse s'accorde à merveille avec des charcuteries, des plats de champignons et des pâtes carbonara.",
         ],
       },
     ],
@@ -103,9 +119,10 @@ export const producers = [
     name: 'Lagoon Brewery',
     url: 'https://www.lagoon-brewery.com/',
     img: '/lagoon_profile.jpg',
+    region: 'Niigata',
     desc: [
-      'Située en bordure de Fukushimagata, un lagon au nord de la préfecture de Niigata, Lagoon Brewery est établie depuis 2021. En plus du saké, cette brasserie produit des breuvages dans la catégorie "autres alcools brassés", incluant des sakés infusés aux fruits et au houblon.',
-      'La devise de la brasserie est "Saveurs diverses et inspirantes", et leur saké est brassé en petites quantités avec une emphase sur le développement durable.',
+      'Située en bordure de Fukushimagata, un lagon au nord de la préfecture de Niigata, Lagoon Brewery est établie depuis 2021. Cette brasserie produit non seulement des sakés traditionnels de grande qualité, mais également  des sakés infusés aux fruits et au houblon. Elle se distingue par son offre unique et audacieuse.',
+      'La devise de la brasserie est "Saveurs diverses et inspirantes". Le saké est brassé en petites quantités avec une approche de développement durable.',
     ],
     products: [
       {
@@ -114,19 +131,9 @@ export const producers = [
         img: '/hop.jpeg',
         availability: 'ordered',
         desc: [
-          "Saké infusé de houblons pour un breuvage rosé et rafraîchissant. Son acidité et légère amertume en font un accord parfait avec grillades, fritures, et plats relevés d'Asie du sud-est.",
-          "Le nez hors du commun nous offre des arômes d'agrumes et de fleurs d'été. Au palais, on retrouve une légère amertume, un délicat umami, et une acidité particulièrement rafraîchissante.",
-          'À boire seul au soleil, ou en accord avec des grillades, tempura, et des sauces aigre-douces.',
-        ],
-      },
-      {
-        name: 'Koshiranrei Junmai Daiginjo',
-        articleNumber: '15573434',
-        img: '/koshitanrei.jpeg',
-        availability: 'ordered',
-        desc: [
-          "Brassé avec du riz Koshitanrei poli à 39%, c'est un Junmai Daiginjo léger, élégant, et légèrement doux qui s'accorde à merveille avec des bouchées fraîches.",
-          "Ce saké léger, doux, et élégant s'accorde parfaitement avec des olives, bruschetta, et proschiutto. Le nez riche nous offre des arômes de melon, fruit de la passion, et de bonbon au litchi.",
+          'Un saké infusé de houblons qui donne un breuvage rosé et rafraîchissant.',
+          "Le nez hors du commun nous offre des arômes d'agrumes et de fleurs d'été. Au palais, on retrouve une belle acidité particulièrement rafraîchissante, un délicat umami, et une légère amertume, provenant du houblon.",
+          'À boire en apéro, sur une terrasse au soleil ou en accord avec des grillades, tempura, et des plats relevés.',
         ],
       },
       {
@@ -135,8 +142,20 @@ export const producers = [
         img: '/kamenoo.jpeg',
         availability: 'ordered',
         desc: [
-          "Brassé avec du riz Kamenoo poli à 70%, c'est un saké rafraîchissant et riche en saveur qui est aussi délicieux seul qu'en accord avec du carpaccio de poisson blanc ou du porc grillé.",
-          'Son nez de banane, fruits tropicaux, et fleur blanche laisse place à un palais riche en umami, mi-doux, et avec une fraîche acidité.',
+          'Brassé avec du riz Kamenoo poli à 70%, ce saké remplit les requis de la catégorie ‘Junmai’ sans être identifié ainsi par le brasseur.',
+          'Son nez de banane et fruits tropicaux, laisse place à un palais riche en umami, mi-doux, et avec une fraîche acidité.',
+          "C'est un saké rafraîchissant et riche en saveur qui est aussi délicieux seul qu'en accord avec du carpaccio de poisson blanc ou du porc grillé.",
+        ],
+      },
+      {
+        name: 'Koshiranrei Junmai Daiginjo',
+        articleNumber: '15573434',
+        img: '/koshitanrei.jpeg',
+        availability: 'ordered',
+        desc: [
+          'Un Junmai Daiginjo léger et  élégant, brassé avec du riz Koshitanrei poli à 39%.',
+          'Le nez riche nous offre des arômes de melon, de fruit de la passion et de bonbon au litchi.',
+          "Ce saké doux et fruité est parfait pour l'apéro, s'accordant à merveille avec des bouchées fraîches, des olives, des bruschetta et le prosciutto.",
         ],
       },
     ],
@@ -145,6 +164,7 @@ export const producers = [
     name: 'Omurasaki Beverage Company',
     img: '/uka_profile.png',
     url: 'https://ukasake.us/',
+    region: 'Californie & Fukushima',
     desc: [
       'Née du désir de Mr Koda, propriétaire de 3e génération de Koda Farms, de connecter avec les racines Japonaises de sa famille, Omurasaki Beverage Company fait produire les produits de la gamme Uka à Fukushima par la brasserie Ninki Shuzo.',
       "Le riz utilisé est une variété propre à la ferme Koda, KR55. Bien que celui-ci soit un riz de table, il se travaille à merveille et permet aux brasseurs d'expérience de Ninki de créer des sakés délicats et raffinés.",

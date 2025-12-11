@@ -36,12 +36,12 @@ export default {
     </h2>
     <p class="">
       Démarrée en 2023, Agence Koji est née d'un désir de déguster une plus grande variété de saké
-      d'artisant, et de partager cette découverte avec nos amis, familles, et le reste du Québec.
+      d'artisans, et de partager cette passion avec nos amis, familles, et le reste du Québec.
     </p>
     <p>
       Notre équipe cible des brasseries de petite échelle qui produisent des sakés de qualité
       supérieure, afin de créer des partenariats durables, tant pour notre Agence que pour ces
-      entreprises familiales. De cette façon, nous avons la chance de contribuer au maintient de la
+      entreprises familiales. De cette façon, nous avons la chance de contribuer au maintien de la
       tradition du saké.
     </p>
     <div class="bg-white max-w-[960px]">

@@ -23,7 +23,7 @@ export default {
       <img class="object-contain w-full lg:h-full" src="/pouring_sake.jpg" />
       <p class="px-6 text-center lg:text-start">
         Agence Koji est une jeune agence de représentation de produits d'alcool, mettant l'emphase
-        sur les sakés d'artisant. Notre mission est de faire découvrir des sakés d'exception aux
+        sur les sakés d'artisans. Notre mission est de faire découvrir des sakés d'exception aux
         Québécois.
       </p>
     </div>
@@ -33,9 +33,9 @@ export default {
     >
       <img class="object-contain w-full lg:h-full" src="/sake_cups.jpg" />
       <p class="px-6 text-center lg:text-end">
-        Nous travaillons avec des petits brasseurs indépendents pour vous présenter des produits
-        artisanaux et de petite production, tout en couvrant la vaste diversité de styles qu'offre
-        le saké.
+        Nous travaillons avec des petits brasseurs indépendants pour vous présenter des produits
+        artisanaux de grande qualité et de petite production, tout en couvrant la vaste diversité de
+        styles qu'offre le saké. Notre mission, c'est d'inspirer le Québec à choisir le saké.
       </p>
     </div>
 
