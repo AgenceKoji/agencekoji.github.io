@@ -6,8 +6,8 @@
           Vous voulez commander?
         </h2>
         <p class="mx-auto mt-6 text-lg/8 text-pretty text-gray-600">
-          Nos sakés sont disponibles à la caisse, pour les particuliers ou les restaurateurs.
-          Contactez-nous pour commander, planifier une dégustation, ou pour plus d'information.
+          Nos sakés sont disponibles à la caisse, pour les restaurateurs ou les particuliers.
+          Contactez-nous pour commander, planifier une dégustation, ou pour plus d'informations.
         </p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <a
