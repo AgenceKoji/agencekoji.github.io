@@ -48,10 +48,8 @@ export default {
             </h2>
             <p class="mt-4 text-base/7 text-pretty text-gray-600">
               D'autres questions?
-              <a
-                href="mailto:info@agencekoji.com"
-                class="font-semibold text-brand hover:text-brand/70"
-                >Contactez-nous.</a
+              <RouterLink to="/contact" class="font-semibold text-brand hover:text-brand/70"
+                >Contactez-nous.</RouterLink
               >
             </p>
           </div>

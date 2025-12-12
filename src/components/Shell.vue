@@ -234,13 +234,13 @@
                 </a>
 
                 <div class="flex flex-1 items-center justify-end">
-                  <a
+                  <RouterLink
                     type="button"
-                    href="mailto:info@agencekoji.com"
+                    to="/contact"
                     class="items-center justify-center rounded-md border border-transparent bg-brand hover:bg-brand/70 px-6 py-2 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-gray-50"
                   >
                     Commander
-                  </a>
+                  </RouterLink>
                 </div>
               </div>
             </div>

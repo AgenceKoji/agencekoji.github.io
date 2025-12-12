@@ -93,13 +93,13 @@
             </div>
 
             <div class="mt-6">
-              <a
+              <RouterLink
                 type="button"
-                href="mailto:info@agencekoji.com"
+                to="/contact"
                 class="flex w-full items-center justify-center rounded-md border border-transparent bg-brand hover:bg-brand/70 px-8 py-3 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-gray-50"
               >
                 Contactez-nous pour commander
-              </a>
+              </RouterLink>
             </div>
             <div class="mt-6 text-center"></div>
           </form>
