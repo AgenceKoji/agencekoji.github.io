@@ -17,11 +17,6 @@ export default {
           answer:
             "Oui! Nous pouvons organiser des ateliers pour aider votre personnel à mieux intégrer nos produits dans votre menu ou à les vendre plus efficacement. Pour des formations plus en profondeur, nous pouvons aussi vous référer à des professionels de l'éducation du saké dans votre région.",
         },
-        {
-          question: 'Comment puis-je commander?',
-          answer:
-            "Écrivez-nous un courriel à info@agencekoji.com contenant votre sélection, ainsi que votre nom et votre succursale SAQ de choix. Vous pourrez payer notre frais d'agence par virement interac, puis nous ferons expédier la commande à votre succursale SAQ où vous pourrez régler la balance et ramasser votre saké.",
-        },
       ],
     }
   },
@@ -67,6 +62,21 @@ export default {
                   {{ faq.question }}
                 </dt>
                 <dd class="mt-2 text-base/7 text-gray-600">{{ faq.answer }}</dd>
+              </div>
+              <div>
+                <dt class="text-base/7 font-semibold text-gray-900">Comment puis-je commander?</dt>
+                <dd class="mt-2 text-base/7 text-gray-600">
+                  Écrivez-nous un courriel à
+                  <a
+                    class="font-semibold text-brand hover:text-brand/70"
+                    href="mailto:info@agencekoji.com"
+                    >info@agencekoji.com</a
+                  >
+                  contenant votre sélection, ainsi que votre nom et votre succursale SAQ de choix.
+                  Vous pourrez payer notre frais d'agence par virement interac, puis nous ferons
+                  expédier la commande à votre succursale SAQ où vous pourrez régler la balance et
+                  ramasser votre saké.
+                </dd>
               </div>
             </dl>
           </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white">
-    <div class="px-6 py-24 sm:py-32 lg:px-8">
+    <div class="px-6 py-12 sm:py-24 lg:px-8">
       <div class="mx-auto text-center">
         <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
           Vous voulez commander?
