@@ -144,7 +144,7 @@ export const producers = [
         img: '/kamenoo.jpeg',
         availability: 'ordered',
         desc: [
-          'Brassé avec du riz Kamenoo poli à 70%, ce saké remplit les requis de la catégorie ‘Junmai’ sans être identifié ainsi par le brasseur.',
+          'Un saké brassé avec du riz de la variété ancestrale Kamenoo poli à 70%.',
           'Son nez de banane et fruits tropicaux laisse place à un palais riche en umami, mi-doux et avec une fraîche acidité.',
           "C'est un saké rafraîchissant et riche en saveur qui est aussi délicieux seul qu'en accord avec du carpaccio de poisson blanc ou du porc grillé.",
         ],
