@@ -150,7 +150,7 @@ export const producers = [
         ],
       },
       {
-        name: 'Koshiranrei Junmai Daiginjo',
+        name: 'Koshitanrei Junmai Daiginjo',
         articleNumber: '15573434',
         img: '/koshitanrei.jpeg',
         availability: 'ordered',
