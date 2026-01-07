@@ -20,4 +20,11 @@ const router = createRouter({
   },
 })
 
+router.beforeEach(async (to, from) => {
+  if (to.path === '/producers/lagoon-brewery/products/koshiranrei-junmai-daiginjo') {
+    return '/producers/lagoon-brewery/products/koshitanrei-junmai-daiginjo'
+  }
+  return true
+})
+
 export default router
