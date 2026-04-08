@@ -220,13 +220,19 @@ export default {
       const info = this.products.state.data.data.filter((p) => {
         return p.saq_article_number === this.product.articleNumber
       })[0]
-      return ((info.regular_agent_fee * info.bottles_per_case) / 100).toFixed(2)
+      return (
+        ((info.regular_agent_fee + info.regular_price_adjustment) * info.bottles_per_case) /
+        100
+      ).toFixed(2)
     },
     regularTotalPrice() {
       const info = this.products.state.data.data.filter((p) => {
         return p.saq_article_number === this.product.articleNumber
       })[0]
-      return ((info.regular_price + info.regular_agent_fee) / 100).toFixed(2)
+      return (
+        (info.regular_price + info.regular_agent_fee + info.regular_price_adjustment) /
+        100
+      ).toFixed(2)
     },
     licenseePrice() {
       const info = this.products.state.data.data.filter((p) => {
@@ -238,13 +244,19 @@ export default {
       const info = this.products.state.data.data.filter((p) => {
         return p.saq_article_number === this.product.articleNumber
       })[0]
-      return ((info.licensee_agent_fee * info.bottles_per_case) / 100).toFixed(2)
+      return (
+        ((info.licensee_agent_fee + info.licensee_price_adjustment) * info.bottles_per_case) /
+        100
+      ).toFixed(2)
     },
     licenseeTotalPrice() {
       const info = this.products.state.data.data.filter((p) => {
         return p.saq_article_number === this.product.articleNumber
       })[0]
-      return ((info.licensee_price + info.licensee_agent_fee) / 100).toFixed(2)
+      return (
+        (info.licensee_price + info.licensee_agent_fee + info.licensee_price_adjustment) /
+        100
+      ).toFixed(2)
     },
   },
 }
