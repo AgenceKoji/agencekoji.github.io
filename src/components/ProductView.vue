@@ -24,10 +24,10 @@
               <Tooltip>
                 <div class="flex flex-col gap-2">
                   <span
-                    >Frais d'agent: {{ regularAgentFee }}$ + taxes payable au moment de la
+                    >Frais d'agent: {{ regularAgentFee }}$ taxes incluses payable au moment de la
                     commande</span
                   >
-                  <span>Prix SAQ: {{ regularPrice }} payable en succursale lors du ramassage</span>
+                  <span>Prix SAQ: {{ regularPrice }} taxes incluses payable en succursale lors du ramassage</span>
                 </div>
               </Tooltip>
             </div>
@@ -40,7 +40,7 @@
               <Tooltip>
                 <div class="flex flex-col gap-2">
                   <span
-                    >Frais d'agent: {{ licenseeAgentFee }}$ + taxes payable au moment de la
+                    >Frais d'agent: {{ licenseeAgentFee }}$ payable au moment de la
                     commande</span
                   >
                   <span>Prix SAQ: {{ licenseePrice }} payable en succursale lors du ramassage</span>
