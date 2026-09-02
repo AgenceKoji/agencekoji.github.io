@@ -20,7 +20,7 @@
             <div class="flex gap-2 items-center text-lg text-gray-900 sm:text-xl">
               <span>{{ regularTotalPrice }}$/bouteille</span>
               <span> - </span>
-              <span> {{ regularTotalPrice * bottlesPerCase }}$/caisse </span>
+              <span> {{ regularCaseTotalPrice }}$/caisse </span>
               <Tooltip>
                 <div class="flex flex-col gap-2">
                   <span
@@ -36,7 +36,7 @@
               <span>Restauration: </span>
               <span>{{ licenseeTotalPrice }}$/bouteille</span>
               <span>-</span>
-              <span> {{ licenseeTotalPrice * bottlesPerCase }}$/caisse </span>
+              <span> {{ licenseeCaseTotalPrice }}$/caisse </span>
               <Tooltip>
                 <div class="flex flex-col gap-2">
                   <span
@@ -121,7 +121,7 @@ import { producers } from '../data/products.ts'
 import ProductGrid from './ProductGrid.vue'
 import Tooltip from './Tooltip.vue'
 
-import { useProducts } from '@/queries/products.js'
+import { useProducts, type SupabaseProduct } from '@/queries/products'
 
 export default {
   components: {
@@ -178,83 +178,88 @@ export default {
         return this.$route.params.productslug === id
       })[0]!
     },
-    hasInventory() {
-      const info = this.products.state.data.data.filter((p) => {
-        return p.saq_article_number === this.product.articleNumber
-      })[0]
-      return info.inventory_cases > 0
-    },
-    hasOrdered() {
-      const info = this.products.state.data.data.filter((p) => {
-        return p.saq_article_number === this.product.articleNumber
-      })[0]
-      return info.ordered_cases > 0
-    },
-    bottlesPerCase() {
-      const info = this.products.state.data.data.filter((p) => {
-        return p.saq_article_number === this.product.articleNumber
-      })[0]
-      return info.bottles_per_case
-    },
-    bottleVolume() {
-      const info = this.products.state.data.data.filter((p) => {
-        return p.saq_article_number === this.product.articleNumber
-      })[0]
-      return info.bottle_volume
-    },
-    hasPriceInfo() {
-      return (
-        this.products.state.status === 'success' &&
-        this.products.state.data.data.filter((p) => {
-          return p.saq_article_number === this.product.articleNumber
-        }).length > 0
+    productInfo(): SupabaseProduct | undefined {
+      if (this.products.state.status !== 'success' || !this.products.state.data) {
+        return undefined
+      }
+      return (this.products.state.data as SupabaseProduct[]).find(
+        (p: SupabaseProduct) => p.saq_article_number === this.product.articleNumber,
       )
     },
+    hasInventory() {
+      return (this.productInfo?.inventory_cases ?? 0) > 0
+    },
+    hasOrdered() {
+      return (this.productInfo?.ordered_cases ?? 0) > 0
+    },
+    bottlesPerCase() {
+      return this.productInfo?.bottles_per_case ?? 0
+    },
+    bottleVolume() {
+      return this.productInfo?.bottle_volume ?? 0
+    },
+    hasPriceInfo() {
+      return this.productInfo !== undefined
+    },
     regularPrice() {
-      const info = this.products.state.data.data.filter((p) => {
-        return p.saq_article_number === this.product.articleNumber
-      })[0]
-      return ((info.regular_price * info.bottles_per_case) / 100).toFixed(2)
+      if (!this.productInfo) return '0.00'
+      return ((this.productInfo.regular_price * this.productInfo.bottles_per_case) / 100).toFixed(2)
     },
     regularAgentFee() {
-      const info = this.products.state.data.data.filter((p) => {
-        return p.saq_article_number === this.product.articleNumber
-      })[0]
+      if (!this.productInfo) return '0.00'
       return (
-        ((info.regular_agent_fee + info.regular_price_adjustment) * info.bottles_per_case) /
+        ((this.productInfo.regular_agent_fee + this.productInfo.regular_price_adjustment) *
+          this.productInfo.bottles_per_case) /
         100
       ).toFixed(2)
     },
     regularTotalPrice() {
-      const info = this.products.state.data.data.filter((p) => {
-        return p.saq_article_number === this.product.articleNumber
-      })[0]
+      if (!this.productInfo) return '0.00'
       return (
-        (info.regular_price + info.regular_agent_fee + info.regular_price_adjustment) /
+        (this.productInfo.regular_price +
+          this.productInfo.regular_agent_fee +
+          this.productInfo.regular_price_adjustment) /
+        100
+      ).toFixed(2)
+    },
+    regularCaseTotalPrice() {
+      if (!this.productInfo) return '0.00'
+      return (
+        ((this.productInfo.regular_price +
+          this.productInfo.regular_agent_fee +
+          this.productInfo.regular_price_adjustment) *
+          this.productInfo.bottles_per_case) /
         100
       ).toFixed(2)
     },
     licenseePrice() {
-      const info = this.products.state.data.data.filter((p) => {
-        return p.saq_article_number === this.product.articleNumber
-      })[0]
-      return ((info.licensee_price * info.bottles_per_case) / 100).toFixed(2)
+      if (!this.productInfo) return '0.00'
+      return ((this.productInfo.licensee_price * this.productInfo.bottles_per_case) / 100).toFixed(2)
     },
     licenseeAgentFee() {
-      const info = this.products.state.data.data.filter((p) => {
-        return p.saq_article_number === this.product.articleNumber
-      })[0]
+      if (!this.productInfo) return '0.00'
       return (
-        ((info.licensee_agent_fee + info.licensee_price_adjustment) * info.bottles_per_case) /
+        ((this.productInfo.licensee_agent_fee + this.productInfo.licensee_price_adjustment) *
+          this.productInfo.bottles_per_case) /
         100
       ).toFixed(2)
     },
     licenseeTotalPrice() {
-      const info = this.products.state.data.data.filter((p) => {
-        return p.saq_article_number === this.product.articleNumber
-      })[0]
+      if (!this.productInfo) return '0.00'
       return (
-        (info.licensee_price + info.licensee_agent_fee + info.licensee_price_adjustment) /
+        (this.productInfo.licensee_price +
+          this.productInfo.licensee_agent_fee +
+          this.productInfo.licensee_price_adjustment) /
+        100
+      ).toFixed(2)
+    },
+    licenseeCaseTotalPrice() {
+      if (!this.productInfo) return '0.00'
+      return (
+        ((this.productInfo.licensee_price +
+          this.productInfo.licensee_agent_fee +
+          this.productInfo.licensee_price_adjustment) *
+          this.productInfo.bottles_per_case) /
         100
       ).toFixed(2)
     },

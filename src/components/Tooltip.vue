@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import { InformationCircleIcon } from '@heroicons/vue/24/outline'
 export default {
   components: {

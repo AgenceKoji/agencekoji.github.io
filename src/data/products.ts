@@ -1,4 +1,21 @@
-export const producers = [
+export interface Product {
+  name: string
+  articleNumber?: string
+  img: string
+  availability?: string
+  desc: string[]
+}
+
+export interface Producer {
+  name: string
+  url?: string
+  img: string
+  region: string
+  desc: string[]
+  products: Product[]
+}
+
+export const producers: Producer[] = [
   {
     name: 'Taiun Sake Brewing',
     url: 'https://taiunsake.co.jp/',
